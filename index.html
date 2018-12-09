@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>How Browsers Work?</title>
+
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section><h2>Dan Roman</h2></section>
+        <section>
+          <h2>How Browsers Work?</h2>
+          <p>Behind the Scenes of Modern Web Browsers</p>
+        </section>
+        <section>
+          <section style="text-transform:uppercase">
+            <p>The browser's high level structure :</p>
+          </section>
+          <section>
+            <img
+              src="./img/layers.png"
+              alt="layers"
+              style="height: 80%; width: 80%"
+            />
+          </section>
+          <section>
+            <img
+              src="./img/layers2.png"
+              alt="layers"
+              style="height: 80%; width: 80%"
+            />
+          </section>
+          <section>
+            It is important to note that browsers such as Chrome run
+            <span style="color: #1b91ff">multiple</span> instances of the
+            rendering engine: one for each tab. Each tab runs in a separate
+            process.
+          </section>
+        </section>
+        <section>
+          <section style="text-transform:uppercase">
+            <p>The rendering engine:</p>
+          </section>
+          <section>
+            <p>The main flow</p>
+            <p><img src="./img/flow.png" alt="flow" /></p>
+          </section>
+          <section>
+            <p><img src="./img/webkitflow.png" alt="webkit" /></p>
+            <p><img src="./img/geckoflow.png" alt="gecko" /></p>
+          </section>
+        </section>
+        <section>
+          <section style="text-transform:uppercase">
+            <p>Parsing and DOM tree construction:</p>
+          </section>
+          <section>
+            <p><img src="./img/general.png" alt="general" /></p>
+          </section>
+          <section>
+            <p><img src="./img/lexier.png" alt="lexier" /></p>
+          </section>
+          <section>
+            <p><img src="./img/cssParser.png" alt="cssParser" /></p>
+          </section>
+        </section>
+        <section>
+          <section style="text-transform:uppercase">
+            <p>Render Tree Constraction:</p>
+          </section>
+          <section>
+            <p><img src="./img/renderTree.png" alt="renderTree" /></p>
+          </section>
+        </section>
+        <section>
+          <section style="text-transform:uppercase"><p>Painting:</p></section>
+          <section>
+            <p><img src="./img/paintingOrder.png" alt="paintingOrder" /></p>
+          </section>
+        </section>
+        <section>the end</section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          {
+            src: "plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>
